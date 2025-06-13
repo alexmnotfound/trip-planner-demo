@@ -17,4 +17,32 @@
         "room_types": ["standard", "ocean-view"],
         "rating": 4.2
     }
+    ,
+    {
+        "name": "Le Petit Hotel",
+        "tags": ["boutique", "romantic", "historic"],
+        "price_level": "$$$",
+        "location": "Paris, France",
+        "amenities": ["breakfast", "concierge", "wine-bar"],
+        "room_types": ["classic", "deluxe", "suite"],
+        "rating": 4.7
+    },
+    {
+        "name": "Ryokan Serenity",
+        "tags": ["traditional", "quiet", "zen"],
+        "price_level": "$$$",
+        "location": "Kyoto, Japan",
+        "amenities": ["onsen", "garden", "tea-ceremony", "traditional-dining"],
+        "room_types": ["tatami", "garden-view"],
+        "rating": 4.8
+    },
+    {
+        "name": "Backpackers Haven",
+        "tags": ["budget", "social", "central"],
+        "price_level": "$",
+        "location": "Rome, Italy", 
+        "amenities": ["shared-kitchen", "free-wifi", "lockers", "common-room"],
+        "room_types": ["dorm", "private"],
+        "rating": 4.0
+    }
 ]

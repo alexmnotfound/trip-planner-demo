@@ -14,5 +14,29 @@
         "location": "San Francisco, USA", 
         "cuisine": "American seafood",
         "dietary_options": ["seafood", "pescatarian"]
+    },
+    {
+        "name": "Le Petit Bistro",
+        "tags": ["fine dining", "romantic", "wine bar"],
+        "price_level": "$$$",
+        "location": "Paris, France",
+        "cuisine": "French",
+        "dietary_options": ["vegetarian options", "gluten-free options"]
+    },
+    {
+        "name": "Sushi Master",
+        "tags": ["sushi", "upscale", "intimate"],
+        "price_level": "$$$",
+        "location": "Tokyo, Japan",
+        "cuisine": "Japanese",
+        "dietary_options": ["seafood", "vegetarian options"]
+    },
+    {
+        "name": "Mama's Kitchen",
+        "tags": ["local", "homestyle", "cozy"],
+        "price_level": "$",
+        "location": "Rome, Italy",
+        "cuisine": "Italian",
+        "dietary_options": ["vegetarian options"]
     }
 ]
