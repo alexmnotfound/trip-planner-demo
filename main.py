@@ -4,11 +4,6 @@ from mcp.client.streamable_http import streamablehttp_client
 from agents import Agent, Runner
 from agents.model_settings import ModelSettings
 
-class ToolWrapper:
-    def __init__(self, name, func):
-        self.name = name
-        self.func = func
-
 class NamedSession:
     def __init__(self, session, name="MCP ClientSession"):
         self._session = session
@@ -18,14 +13,8 @@ class NamedSession:
         if asyncio.iscoroutinefunction(attr):
             async def wrapped(*args, **kwargs):
                 result = await attr(*args, **kwargs)
-                # Debug print to see what is being returned
-                print(f"[DEBUG] {item} returned: {result}")
-                # If result has a .tools attribute, return that
                 if hasattr(result, "tools"):
                     return result.tools
-                # If result is a list of tuples, wrap them
-                if isinstance(result, list) and result and isinstance(result[0], tuple):
-                    return [ToolWrapper(t[0], t[1]) for t in result]
                 return result
             return wrapped
         return attr
