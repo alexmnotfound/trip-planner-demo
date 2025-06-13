@@ -1,24 +1,13 @@
 import asyncio
-import os
-from dotenv import load_dotenv
-from agents import Agent, Runner
-from openai import OpenAI
-
-# Load env vars
-load_dotenv()
+from mcp import ClientSession
+from mcp.client.streamable_http import streamablehttp_client
 
 async def main():
-
-    # Create agent
-    agent = Agent(
-        name="Assistant",
-        instructions="You only respond in haikus.",
-    )
-
-    # Run agent
-    result = await Runner.run(agent, "Tell me about recursion in programming.")
-    print(result.final_output)
-
+    url = "http://127.0.0.1:8000/mcp"
+    async with streamablehttp_client(url) as (read, write, get_session_id):
+        async with ClientSession(read, write) as session:
+            result = await session.call_tool("add", {"a": 21, "b": 21})
+            print("Result from server:", result)
 
 if __name__ == "__main__":
     asyncio.run(main())
