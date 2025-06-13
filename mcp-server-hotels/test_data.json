@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Grand Plaza Hotel",
+        "tags": ["luxury", "downtown", "business-friendly"],
+        "price_level": "$$$",
+        "location": "New York City, USA",
+        "amenities": ["pool", "spa", "gym", "restaurant", "room-service"],
+        "room_types": ["standard", "deluxe", "suite"],
+        "rating": 4.5
+    },
+    {
+        "name": "Seaside Inn",
+        "tags": ["beachfront", "family-friendly", "casual"],
+        "price_level": "$$",
+        "location": "San Francisco, USA",
+        "amenities": ["beach-access", "restaurant", "free-wifi"],
+        "room_types": ["standard", "ocean-view"],
+        "rating": 4.2
+    }
+]
