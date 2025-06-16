@@ -11,7 +11,7 @@
     {
         "name": "Seaside Inn",
         "tags": ["beachfront", "family-friendly", "casual"],
-        "price_level": "$$",
+        "price_level": "$",
         "location": "San Francisco, USA",
         "amenities": ["beach-access", "restaurant", "free-wifi"],
         "room_types": ["standard", "ocean-view"],

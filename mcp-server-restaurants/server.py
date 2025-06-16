@@ -21,8 +21,6 @@ def find_restaurants(
     All parameters are optional - only filter on provided criteria.
     """
     matches = []
-    print(dietary_options)
-    print(restaurants)
     for restaurant in restaurants:
         # Only check criteria that were provided
         if dietary_options and not all(opt in restaurant["dietary_options"] for opt in dietary_options):

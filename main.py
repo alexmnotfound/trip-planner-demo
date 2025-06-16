@@ -162,8 +162,24 @@ async def main():
                 if not result.final_output:
                     logger.error(f"No recommendations found for {profile['name']}. This may be due to no available tools.")
                 else:
-                    logger.info(f"Recommendations for {profile['name']}:")
-                    logger.info(result.final_output)
+                    try:
+                        # Try to parse the response as JSON
+                        recommendations = json.loads(result.final_output)
+                        
+                        # Validate the JSON structure
+                        required_sections = ["hotels", "restaurants", "activities"]
+                        for section in required_sections:
+                            if section not in recommendations:
+                                recommendations[section] = []
+                            elif not isinstance(recommendations[section], list):
+                                recommendations[section] = []
+                        
+                        # Pretty print the recommendations
+                        logger.info(f"Recommendations for {profile['name']}:")
+                        logger.info(json.dumps(recommendations, indent=2))
+                    except json.JSONDecodeError:
+                        logger.error(f"Invalid JSON response for {profile['name']}: {result.final_output}")
+                        logger.error("The agent did not return a valid JSON response. Please check the agent's instructions.")
             except Exception as e:
                 logger.error(f"Failed to process profile for {profile['name']}: {str(e)}", exc_info=True)
                 logger.error("This may be due to no available tools from the connected MCP servers.")
